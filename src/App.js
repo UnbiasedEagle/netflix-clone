@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
+import Row from './Row';
+import requests from './request';
+import Banner from './Banner';
+import Nav from './Nav';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className='app'>
+			<Nav />
+			<Banner />
+			<Row title='NETFLIX ORIGINALS' isLargeRow={true} fetchUrl={requests.fetchNetflixOriginals} />
+			<Row title='Trending Now' isLargeRow={false} fetchUrl={requests.fetchTrending} />
+			<Row title='Top Rated' isLargeRow={false} fetchUrl={requests.fetchTrending} />
+			<Row title='Action Movies' isLargeRow={false} fetchUrl={requests.fetchActionMovies} />
+			<Row title='Comedy Movies' isLargeRow={false} fetchUrl={requests.fetchComedyMovies} />
+			<Row title='Horror Movies' isLargeRow={false} fetchUrl={requests.fetchHorrorMovies} />
+			<Row title='Romance Movies' isLargeRow={false} fetchUrl={requests.fetchRomanceMovies} />
+			<Row title='Documentaries' isLargeRow={false} fetchUrl={requests.fetchDocumentariesMovies} />
+		</div>
+	);
 }
 
 export default App;
